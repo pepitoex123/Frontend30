@@ -1,0 +1,16 @@
+.u-center{
+    text-align: center;
+}
+
+.image {
+    height: 450px;
+    width: 450px;
+}
+
+.c-heading {
+    font-size: 80px;
+}
+
+svg {
+    max-height: 0;
+}
