@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+}
+
+
+.c-panel {
+    display: flex;
+    height: 100vh;
+}
+
+.c-panel__left{
+    background-color: tomato;
+    width: 50%;
+}
+
+.c-panel__right{
+    flex-grow: 1;
+    background-color: peachpuff;
+}
+
+.c-panel__bar{
+    background-color: hsla(0,0%,33%,1);
+    width: 14px;
+    cursor: col-resize;
+}
