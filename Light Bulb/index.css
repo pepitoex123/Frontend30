@@ -1,0 +1,22 @@
+body {
+    background-color: hsla(241,12%,16%,1);
+}
+
+.o-main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+.c-bulb{
+    width: 50px;
+    position: absolute;
+    top: 20px;
+    transform: rotate(180deg);
+}
+
+.c-desk{
+    width: 300px;
+}
