@@ -1,5 +1,9 @@
 body {
     background-color: hsla(241,12%,16%,1);
+    --dark-light: hsla(241,13%,12%,1);
+    --light-light: hsla(42,100%,63%,1);
+    --dark-filament: hsla(241,11%,6%,1);
+    --light-filament: hsla(2,100%,70%,1);
 }
 
 .o-main{
@@ -15,6 +19,43 @@ body {
     position: absolute;
     top: 20px;
     transform: rotate(180deg);
+}
+
+.c-bulb path{
+    transition: fill 0.3s cubic-bezier(0.420,0.000,1.000,1.000);
+}
+
+.c-bulb__light {
+    fill: var(--dark-light);
+}
+
+.is-light-on .c-bulb__light {
+    fill: var(--light-light);
+}
+
+.c-bulb__filament {
+    fill: var(--dark-filament);
+}
+
+.is-light-on .c-bulb__filament {
+    fill: var(--light-filament);
+}
+
+.c-bulb__glow {
+    background-image: radial-gradient(hsla(50,100%,63%,1),hsla(52,100%,50%,0) 70%);
+    display: block;
+    height: 100px;
+    position: absolute;
+    width: 100px;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    opacity: 0.35;
+    transition: all 0.3s cubic-bezier(0.420,0.000,1.000,1.000);
+}
+
+.is-light-on .c-bulb__glow{
+    transform: translateX(-50%) scale(1);
 }
 
 .c-desk{
