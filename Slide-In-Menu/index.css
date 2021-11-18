@@ -1,0 +1,175 @@
+
+body {
+    background-color: hsla(0,0%,22%,1);
+}
+
+
+.o-main {
+    display: flex;
+    height: 100vh;
+    max-width: 100vw;
+    overflow: hidden;
+    width: 100vw;
+}
+
+
+
+.c-nav__container {
+    background-color: hsla(0,0%,100%,1);
+    position: fixed;
+    height: 100vh;
+    max-width: 400px;
+    right: 0;
+    top: 0;
+    transform: translate3d(100%,0,0);
+    transition: transform 0.5s ease;
+    will-change: transform;
+    width: 100vw;
+    z-index: 1;
+
+}
+
+.o-content{
+    align-items: center;
+    color: hsla(0,0%,100%,1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    transition: filter 0.3s;
+}
+
+.c-nav__checkbox:checked ~ .o-content {
+    filter: blur(2px);
+}
+
+
+
+.c-nav__checkbox:checked + .o-header .c-nav__container {
+    transform: translate3d(0,0,0);
+}
+
+.c-nav__label {
+    cursor: pointer;
+    display: block;
+    height: 18px;
+    width: 24px;
+    z-index: 2;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.c-nav__btn-line {
+    background-color: hsla(0,0%,100%,1);
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.c-nav__checkbox:checked + .o-header .c-nav__btn-line {
+    background-color: hsla(0,0%,22%,1);
+}
+
+.c-nav__checkbox:checked + .o-header .c-nav__btn-top {
+    animation: top-anime-in 0.5s ease forwards;
+}
+
+.c-nav__checkbox:checked + .o-header .c-nav__btn-bottom {
+    animation: bottom-anime-in 0.5s ease forwards;
+}
+
+.c-nav__checkbox:checked + .o-header .c-nav__btn-middle {
+    animation: middle-anime-in 0.5s ease forwards;
+}
+
+.c-nav__btn-top {
+    animation: top-anime-out 0.5s ease forwards;
+}
+
+.c-nav__btn-middle {
+    top: 7px;
+    animation: middle-anime-out 0.5s ease forwards;
+}
+
+.c-nav__btn-bottom {
+    top: 14px;
+    animation: bottom-anime-out 0.5s ease forwards;
+}
+
+@keyframes top-anime-in {
+    0% {
+        transform: translate3d(0,0,0) rotate(0);
+    }
+
+    50% {
+        transform: translate3d(0,7px,0) rotate(0);
+    }
+
+    100% {
+        transform: translate3d(0,7px,0) rotate(45deg);
+    }
+}
+
+@keyframes top-anime-out {
+    0% {
+        transform: translate3d(0,7px,0) rotate(45deg);
+    }
+
+    50% {
+        transform: translate3d(0,7px,0) rotate(0);
+    }
+
+    100% {
+        transform: translate3d(0,0,0) rotate(0);
+    }
+}
+
+@keyframes bottom-anime-in {
+    0% {
+        transform: translate3d(0,0,0) rotate(0);
+    }
+
+    50% {
+        transform: translate3d(0,-7px,0) rotate(0);
+    }
+
+    100% {
+        transform: translate3d(0,-7px,0) rotate(-45deg);
+    }
+}
+
+@keyframes bottom-anime-out {
+    0% {
+        transform: translate3d(0,-7px,0) rotate(-45deg);
+    }
+
+    50% {
+        transform: translate3d(0,-7px,0) rotate(0);
+    }
+
+    100% {
+        transform: translate3d(0,0,0) rotate(0);
+    }
+}
+
+@keyframes middle-anime-in {
+    0%,49% {
+        opacity: 1;
+    }
+    50%,100% {
+        opacity: 0;
+    }
+}
+
+@keyframes middle-anime-out {
+    0%,49% {
+        opacity: 0;
+    }
+    50%,100% {
+        opacity: 1;
+    }
+}
